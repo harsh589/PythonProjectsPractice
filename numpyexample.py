@@ -44,3 +44,32 @@ arr2[1] = 777
 
 print("Original:", arr2)      # [10 777 30 40]
 print("View:    ", view_arr)  # [10 777 30 40]
+
+
+
+
+#shape
+arr6 = np.array([[1, 2, 3], [4, 5, 6]])
+
+print(arr6.shape)
+
+
+arr7 = np.array([1,2,3,4,5,6,7,8,9,10])
+
+print(arr7.reshape(2,5))
+
+
+#iteration using nditer()
+
+for x in np.nditer(arr7):
+    print(x)
+
+#when i want to change the datatype from one other then we use op_dtype
+
+
+for z in np.nditer(arr7,flags=['buffered'],op_dtypes=['S']):
+    print(z)
+
+
+    for a in np.nditer(arr7,flags=["external_loop"]):
+        print(a)
